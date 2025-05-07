@@ -1,0 +1,24 @@
+class Circulo:
+    def __init__(self, radio):
+        self.set_radio(radio)
+
+    def set_radio(self, radio):
+        if radio >= 0:
+            self._radio = radio
+        else:
+            print("El radio no puede ser negativo")
+
+    def get_radio(self):
+        return self._radio
+
+    def area(self):
+        pi = 3.1416
+        return pi * self._radio ** 2
+
+    def circunferencia(self):
+        pi = 3.1416
+        return 2 * pi * self._radio
+
+circulo = Circulo(7)
+print("Área:", circulo.area())
+print("Circunferencia:", circulo.circunferencia())
