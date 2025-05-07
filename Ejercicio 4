@@ -1,11 +1,17 @@
+from datetime import datetime
+
 class Libro:
-    def __init__(self, titulo, autor, año_publicacion):
+    def __init__(self, titulo, autor, año):
         self._titulo = titulo
         self._autor = autor
-        self._año_publicacion = año_publicacion
+        self._año = año
 
     def descripcion(self):
-        return f"'{self._titulo}' por {self._autor} ({self._año_publicacion})"
+        return f"{self._titulo} de {self._autor}, publicado en {self._año}"
 
     def es_clasico(self):
-        return 2025 - self._año_publicacion > 50
+        return datetime.now().year - self._año > 50
+
+libro = Libro("Cien Años de Soledad", "García Márquez", 1967)
+print(libro.descripcion())
+print("¿Es clásico?", libro.es_clasico())
