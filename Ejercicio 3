@@ -11,8 +11,8 @@ class CuentaBancaria:
     def retirar(self, cantidad):
         if 0 < cantidad <= self._saldo:
             self._saldo -= cantidad
-        else:
-            print("Fondos insuficientes o cantidad inválida.")
 
-    def mostrar_informacion(self):
-        return f"Titular: {self._titular}, Saldo: {self._saldo}, Cuenta: {self._numero_cuenta}"
+
+cuenta = CuentaBancaria("Luis", 500, "123456")
+cuenta.depositar(200)
+cuenta.retirar(100)
