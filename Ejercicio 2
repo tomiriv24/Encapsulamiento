@@ -4,29 +4,13 @@ class Persona:
         self._edad = edad
         self._sexo = sexo
 
-    def mostrar_informacion(self):
-        return f"Nombre: {self._nombre}, Edad: {self._edad}, Sexo: {self._sexo}"
-
     def cambiar_edad(self, nueva_edad):
         if nueva_edad > 0:
             self._edad = nueva_edad
-        else:
-            print("Edad no válida.")
 
-    def get_nombre(self):
-        return self._nombre
+    def mostrar_info(self):
+        return f"{self._nombre}, {self._edad} años, Sexo: {self._sexo}"
 
-    def set_nombre(self, nombre):
-        self._nombre = nombre
-
-    def get_edad(self):
-        return self._edad
-
-    def set_edad(self, edad):
-        self.cambiar_edad(edad)
-
-    def get_sexo(self):
-        return self._sexo
-
-    def set_sexo(self, sexo):
-        self._sexo = sexo
+persona = Persona("Ana", 25, "F")
+persona.cambiar_edad(30)
+print(persona.mostrar_info())
